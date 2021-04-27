@@ -13,7 +13,7 @@ class NewsApiProvider implements Source {
   @override
   Future<ItemModel> fetchItem(int id) async {
     final response = await client.get(
-      Uri.http(
+      Uri.https(
         _root,
         'v0/item/$id.json',
       ),
@@ -25,7 +25,7 @@ class NewsApiProvider implements Source {
   @override
   Future<List<int>> fetchTopIds() async {
     final response = await client.get(
-      Uri.http(
+      Uri.https(
         _root,
         'v0/topstories.json',
       ),
