@@ -23,8 +23,9 @@ class NewsDbProvider implements Source, Cache {
               id INTEGER PRIMARY KEY,
               type TEXT,
               by TEXT,
-              time TEXT,
+              time INT,
               text TEXT,
+              url TEXT,
               parent INTEGER,
               kids BLOB,
               dead INTEGER,
@@ -59,7 +60,11 @@ class NewsDbProvider implements Source, Cache {
 
   @override
   Future<int> addItem(ItemModel itemModel) {
-    return db.insert('Items', itemModel.toMapForDb());
+    return db.insert(
+      'Items',
+      itemModel.toMapForDb(),
+      conflictAlgorithm: ConflictAlgorithm.ignore
+    );
   }
 }
 
