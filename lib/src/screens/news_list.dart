@@ -10,7 +10,7 @@ class NewsList extends StatelessWidget {
 
     //this is bads
     //this is temporary
-    bloc.fetchTopIs();
+    
     return Scaffold(
       appBar: AppBar(
         title: Text('Top News'),
