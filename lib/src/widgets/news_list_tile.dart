@@ -36,7 +36,7 @@ class NewsListTile extends StatelessWidget {
         ListTile(
           onTap: () {
             // print('${itemModel.id} on tap');
-            Navigator.pushNamed(context, '/${itemModel.id}');
+            Navigator.pushNamed(context, '/news/${itemModel.id}');
           },
           title: Text(itemModel.title),
           subtitle: Text('${itemModel.score} votes'),
